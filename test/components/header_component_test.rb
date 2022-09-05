@@ -3,10 +3,15 @@
 require "test_helper"
 
 class HeaderComponentTest < ViewComponent::TestCase
-  def test_component_renders_something_useful
-    # assert_equal(
-    #   %(<span>Hello, components!</span>),
-    #   render_inline(HeaderComponent.new(message: "Hello, components!")).css("span").to_html
-    # )
+  def test_component_renders_title
+   expected = "test_1"
+   render_inline HeaderComponent.new(expected)
+   assert_text(expected)
+  end
+
+  def test_component_renders_title_with_default_value 
+    expected = "Home"
+    render_inline(HeaderComponent.new)
+    assert_text(expected)
   end
 end
