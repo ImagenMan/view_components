@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Posts</h1>
+<%= render(HeaderComponent.new("Posts")) %>
 
 <div id="posts">
   <% @posts.each do |post| %>
